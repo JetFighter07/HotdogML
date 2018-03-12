@@ -54,13 +54,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 fatalError("Model failed to process image.")
             }
             
-            if let firstResult = results.first {
-                if firstResult.identifier.contains("hotdog") {
-                    self.navigationItem.title = "Hotdog!"
-                } else {
-                    self.navigationItem.title = "Not Hotdog..."
-                }
-            }
+//            if let firstResult = results.first {
+//                if firstResult.identifier.contains("hotdog") {
+//                    self.navigationItem.title = "Hotdog!"
+//                } else {
+//                    self.navigationItem.title = "Not Hotdog..."
+//                }
+//            }
+            
+            // Not only it is able to check if it is a hotdog or not,
+            // but it just shows what it think is present on a picture
+            
+            let resultStr = results.first?.identifier
+            self.navigationItem.title = resultStr
             
             
             
